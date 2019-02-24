@@ -49,7 +49,7 @@ console.log(`Sanitized schema: ${JSON.stringify(dirtySchema)}`);
 ## Using as express middleware
 
 ```typescript
-import { sanitizeExpressMiddleware } from '../genericJsonSanitizer';
+import { sanitizeExpressMiddleware } from 'generic-json-sanitizer';
 import express from 'express';
 
 const app = express();
