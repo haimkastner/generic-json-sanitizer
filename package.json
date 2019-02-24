@@ -1,0 +1,38 @@
+{
+  "name": "generic-json-sanitizer",
+  "version": "1.0.0",
+  "author": {
+    "name": "Haim Kastner",
+    "email": "haim.kastner@gmail.com",
+    "url": "https://github.com/haimkastner"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haimkastner/generic-json-sanitizer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/haimkastner/generic-json-sanitizer/issues"
+  },
+  "homepage": "https://github.com/haimkastner/generic-json-sanitizer#readme",
+  "description": "Generic json sanitizer is very small generic json sanitizer with express middleware support using 'sanitize-html'",
+  "main": "dist/genericJsonSanitizer.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.4",
+    "sanitize-html": "^1.20.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.16.1",
+    "@types/sanitize-html": "^1.18.2",
+    "@types/node": "^10.12.10",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.2.2"
+  },
+  "keywords": [
+    "sanitizer",
+    "express"
+  ]
+}
