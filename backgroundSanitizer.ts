@@ -1,6 +1,6 @@
 // Waiting to experimental-worker to be done.
 // import { parentPort, workerData } from 'worker_threads';
-import sanitizeHtml from 'sanitize-html';
+import * as sanitizeHtml from 'sanitize-html';
 
 /**
  * Objects in js/json are a tree of values, so the easy way to run on all tree is to run it in recursive.  

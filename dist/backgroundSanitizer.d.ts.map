@@ -1,1 +1,1 @@
-{"version":3,"file":"backgroundSanitizer.d.ts","sourceRoot":"","sources":["../backgroundSanitizer.ts"],"names":[],"mappings":"AAEA,OAAO,YAAY,MAAM,eAAe,CAAC;AA2BzC;;;;;IAKI;AACJ,eAAO,MAAM,YAAY,6EAExB,CAAA;AAED,oFAAoF"}
+{"version":3,"file":"backgroundSanitizer.d.ts","sourceRoot":"","sources":["../backgroundSanitizer.ts"],"names":[],"mappings":"AAEA,OAAO,KAAK,YAAY,MAAM,eAAe,CAAC;AA2B9C;;;;;IAKI;AACJ,eAAO,MAAM,YAAY,6EAExB,CAAA;AAED,oFAAoF"}

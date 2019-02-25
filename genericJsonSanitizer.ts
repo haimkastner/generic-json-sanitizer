@@ -1,4 +1,4 @@
-import sanitizeHtml from 'sanitize-html';
+import * as sanitizeHtml from 'sanitize-html';
 import * as express from 'express';
 import { sanitizeJson } from './backgroundSanitizer';
 

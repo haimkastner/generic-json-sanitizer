@@ -1,4 +1,4 @@
-import sanitizeHtml from 'sanitize-html';
+import * as sanitizeHtml from 'sanitize-html';
 /**
  * Sanitize any json schema.
  * By walk on all json tree and cleaning an existing string.

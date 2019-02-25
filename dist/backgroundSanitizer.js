@@ -1,11 +1,8 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 // Waiting to experimental-worker to be done.
 // import { parentPort, workerData } from 'worker_threads';
-const sanitize_html_1 = __importDefault(require("sanitize-html"));
+const sanitizeHtml = require("sanitize-html");
 /**
  * Objects in js/json are a tree of values, so the easy way to run on all tree is to run it in recursive.
  * @param jsonSchema Json data to sanitize.
@@ -25,7 +22,7 @@ const recursiveJsonSchemaCleaner = (jsonSchema, cleanOptions = undefined) => {
             recursiveJsonSchemaCleaner(value, cleanOptions);
         }
         else {
-            jsonSchema[key] = sanitize_html_1.default(value, cleanOptions);
+            jsonSchema[key] = sanitizeHtml(value, cleanOptions);
         }
     }
 };
