@@ -1,5 +1,4 @@
-// Waiting to experimental-worker to be done.
-// import { parentPort, workerData } from 'worker_threads';
+import { parentPort, workerData } from 'worker_threads';
 import * as sanitizeHtml from 'sanitize-html';
 
 /**
@@ -7,7 +6,7 @@ import * as sanitizeHtml from 'sanitize-html';
  * @param jsonSchema Json data to sanitize.
  * @param cleanOptions 'sanitize-html' options, for cleaning any string.
  */
-const recursiveJsonSchemaCleaner = (jsonSchema: any, cleanOptions: sanitizeHtml.IOptions | undefined = undefined) => {
+ function recursiveJsonSchemaCleaner(jsonSchema: any, cleanOptions: sanitizeHtml.IOptions | undefined = undefined) {
 
     /** If json is not an object, return. */
     if (typeof jsonSchema !== 'object') {
@@ -33,14 +32,13 @@ const recursiveJsonSchemaCleaner = (jsonSchema: any, cleanOptions: sanitizeHtml.
  * @param jsonSchema Json to sanitize.
  * @param cleanOptions 'sanitize-html' lib options.
   */
-export const sanitizeJson = (jsonSchema: any, cleanOptions: sanitizeHtml.IOptions | undefined = undefined) => {
+export function sanitizeJson(jsonSchema: any, cleanOptions: sanitizeHtml.IOptions | undefined = undefined) {
     recursiveJsonSchemaCleaner(jsonSchema, cleanOptions);
 }
 
 /** If using module as 'worker_threads' alloc json from 'workerData' and do work. */
-// Waiting to experimental-worker to be done.
-// if (workerData)
-//     sanitizeJson(workerData.jsonSchema, workerData.cleanOptions);
-// /** If there is a parent port, give it result. */
-// if (parentPort)
-//     parentPort.postMessage(workerData.jsonSchema);
+if (workerData)
+    sanitizeJson(workerData.jsonSchema, workerData.cleanOptions);
+/** If there is a parent port, give it the result. */
+if (parentPort)
+    parentPort.postMessage(workerData.jsonSchema);

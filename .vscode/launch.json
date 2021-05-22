@@ -8,10 +8,7 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceFolder}\\dist\\genericJsonSanitizer.js",
-            "runtimeArgs": [
-                "--experimental-worker"
-            ],
+            "program": "${workspaceFolder}\\dist\\example\\usingExample.js",
             "preLaunchTask": "npm: build",
             "outFiles": [
                 "${workspaceFolder}/**/*.js"

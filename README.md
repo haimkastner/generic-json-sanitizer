@@ -3,6 +3,8 @@
 Generic json sanitizer is very small generic json sanitizer with express middleware support using 'sanitize-html',
 by walking on json tree and cleaning any string.
 
+[![Build & Test Status](https://github.com/haimkastner/generic-json-sanitizer/workflows/generic-json-sanitizer/badge.svg?branch=master)](https://github.com/haimkastner/generic-json-sanitizer/actions)
+
 ## Install via NPM:
 
 ```bash 
@@ -44,6 +46,12 @@ const cleanOptions = {
 sanitizeJsonSync(dirtySchema, cleanOptions)
 console.log(`Sanitized schema: ${JSON.stringify(dirtySchema)}`);
 
+/** Clean big schema async */
+sanitizeJsonAsync(bigDirtySchema, cleanOptions)
+    .then((sanitizeSchema: any) => {
+        console.log(`Async Sanitized schema sample: ${JSON.stringify(sanitizeSchema[55])}`);
+    });
+
 ```
 
 ## Using as express middleware
@@ -56,6 +64,8 @@ const app = express();
 
 /** For default options */
 app.use(sanitizeExpressMiddleware);
+/** To sanitize big schema, you can use async sanitizer */
+app.use(sanitizeExpressMiddlewareAsync);
 
 /** Set 'sanitize-html' options */
 app.use((request: express.Request, response: express.Response, next: express.NextFunction) => {
@@ -68,6 +78,6 @@ app.use((request: express.Request, response: express.Response, next: express.Nex
 ```
 
 
-Async support is readt and wait for awesome 'experimental-worker' to be done.
+> Async supports only from Node 13.
 
-For real example see `example` folder.
+For real example see `src/example` folder.
