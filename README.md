@@ -16,6 +16,9 @@ npm install generic-json-sanitizer
 The sanitizer using [sanitize-html](https://github.com/punkave/sanitize-html) API.
 And sanitize option is [IOptions](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/sanitize-html/index.d.ts).
 
+> Pay attention! The async API uses the JS Worker Thread API- this means Node.JS >= 14 is required and may also cause issues with Webpack bundling.
+This does NOT affect the synchronous API.
+
 ## Simple using.
 ```typescript
 
