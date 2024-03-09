@@ -9,7 +9,7 @@ import * as sanitizeHtml from 'sanitize-html';
  function recursiveJsonSchemaCleaner(jsonSchema: any, cleanOptions: sanitizeHtml.IOptions | undefined = undefined) {
 
     /** If json is not an object, return. */
-    if (typeof jsonSchema !== 'object') {
+    if (!jsonSchema || typeof jsonSchema !== 'object') {
         return;
     }
 
